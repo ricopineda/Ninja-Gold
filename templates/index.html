@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title> Ninja Gold </title>
+			<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/ninja.css')}}"
+		</head>
+		<body>
+
+			<div class="wrapper">
+				<form id="total_gold">
+					Your Gold {{ session['counter'] }}
+				</form>
+				<div class="farm">
+					<p> Farm </p>
+					<p> (earns 10-20 gold) </p>
+					<form action="/process_money" method="post">
+		  				<input type="hidden" name="building" value="farm" />
+		  				<input type="submit" value="Find Gold!"/>
+					</form>
+				</div>
+				<div class="cave">
+					<p> Cave </p>
+					<p> (earns 5-10 gold) </p>
+					<form action="/process_money" method="post">
+		  				<input type="hidden" name="building" value="cave" />
+		  				<input type="submit" value="Find Gold!"/>
+					</form>
+				</div>
+				<div class="house">
+					<p> House </p>
+					<p> (earns 2-5 gold) </p>
+					<form action="/process_money" method="post">
+		  				<input type="hidden" name="building" value="house" />
+		  				<input type="submit" value="Find Gold!"/>
+					</form>
+				</div>
+				<div class="casino">
+					<p> Casino </p>
+					<p> (earns 10-20 gold) </p>
+					<form action="/process_money" method="post">
+		  				<input type="hidden" name="building" value="casino" />
+		  				<input type="submit" value="Find Gold!"/>
+					</form>
+				</div>
+				<h3> Activities </h3>
+				<div class="activities">
+					{% if request.form['building'] == 'farm' %}
+					<h3> Earned {{ session['counter'] }} gold from farm </h3>
+					{% elif request.form['building'] == 'cave' %}
+					<h3> Earned {{ session['counter']  }} gold from cave </h3>
+					{% elif request.form['building'] == 'house' %}
+					<h3> Earned {{ session['counter'] }} gold from house </h3>
+					{% elif request.form['building'] == 'casino' %}
+					<h3> Earned {{ session['counter'] }} gold from casino </h3>
+					{% else %}
+					{% endif %}
+
+				</div>
+					<form action="/process" method="post">
+		  				<input type="submit" value="Play Again"/>
+					</form>
+			</div>
+
+		</body>
+	</html>

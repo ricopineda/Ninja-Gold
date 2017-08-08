@@ -1,0 +1,45 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrapper{
+	width: 800px;
+	height: 700px;
+	background-color: gray;
+	padding-top: 50px;
+}
+
+.farm{
+	width: 150px;
+	height: 150px;
+	border: 1px solid black;
+	display: inline-block;
+}
+
+.cave{
+	width: 150px;
+	height: 150px;
+	border: 1px solid black;
+	display: inline-block;
+}
+
+.house{
+	width: 150px;
+	height: 150px;
+	border: 1px solid black;
+	display: inline-block;
+}
+
+.casino{
+	width: 150px;
+	height: 150px;
+	border: 1px solid black;
+	display: inline-block;
+}
+
+.activities{
+	width: 400px;
+	height: 150px;
+	border: 1px solid black;
+}
